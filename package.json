@@ -19,5 +19,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:serve": "gatsby develop -p 3000 --host ecommerce-web-app.pod-point.localhost --https --key-file cypress/support/ssl/key.key --cert-file cypress/support/ssl/cert.crt",
+    "cy:amplify": "cypress run --reporter mochawesome --reporter-options 'reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss'",
+    "cy:snaps": "cypress run --env updateSnapshots=true"
   }
 }
