@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cy:run": "cypress run",
+    "cy:serve": "gatsby develop -p 3000 --host ecommerce-web-app.pod-point.localhost --https --key-file cypress/support/ssl/key.key --cert-file cypress/support/ssl/cert.crt",
+    "cy:amplify": "cypress run --reporter mochawesome --reporter-options 'reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss'",
+    "cy:snaps": "cypress run --env updateSnapshots=true"
   },
   "dependencies": {
     "@next/font": "13.4.13",
@@ -19,5 +23,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
-  }
+  },
+  "devDependencies": {
+    "cypress": "^13.15.0",
+    "cypress-fail-fast": "^7.1.1",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-terminal-report": "^5.3.12"
 }
